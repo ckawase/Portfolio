@@ -1,0 +1,85 @@
+table{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 14px;
+    border-collapse: collapse;
+    height: 480px;
+    margin: 64px auto;
+    border: 2px solid #eee;
+  }
+
+  thead,tfoot{
+    background: #eee;
+  }
+
+  th,td{
+    padding: 8px;
+    text-align: center;
+  }
+
+  tbody td:first-child,
+  .day th:first-child{
+    color:red;
+  }
+
+  tbody td:last-child,
+  .day th:last-child{
+    color:blue;
+  }
+
+  td.disabled {
+    opacity: 0.6;
+  }
+
+  td.today {
+    font-weight: bold;
+    color: #e6b422;
+  }
+
+  #prev,
+  #next{
+    cursor: pointer;
+    user-select: none;
+  }
+
+  #prev:hover,
+  #next:hover{
+    background: #edb277;
+  }
+
+  .date{
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ffffff;
+    text-align: center;
+    vertical-align: top;
+    background: #f7f3df;
+    height: 130px;
+    width: calc(100% / 7);
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+
+  .date:hover{
+    opacity: 0.3;
+  }
+
+  .date-head{
+    background: #E3F2FD;
+    height: 20%;
+  }
+
+  .date-content{
+    background: #f7f3df;
+    /* height: 80px; */
+  }
+
+   .eventTitle{
+    height: 18px;
+    font-size: 14px;
+    text-align: left;
+    color: #555;
+    font-weight: normal;
+    overflow: hidden;
+    font-family: 'Source Han Sans', sans-serif;
+  }
