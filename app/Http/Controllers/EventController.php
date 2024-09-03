@@ -24,46 +24,35 @@ class EventController extends Controller
 
     public function schedule($date)
     {
-        // 終日イベントの取得
         $allDayEvents = Event::select('title', 'startDate', 'endDate', 'body', 'id')
-            ->where('isAllDay', true)  // isAllDay = 1 の条件
-            ->where(function($query) use ($date) {
-                $query->whereDate('startDate', '<=', $date)
-                      ->whereDate('endDate', '>=', $date);
-            })
-            ->orderBy('startDate')
-            ->get();
+        ->where('isAllDay', true)  // isAllDay = 1 の条件
+        ->where(function($query) use ($date) {
+            $query->whereDate('startDate', '<=', $date)
+                  ->whereDate('endDate', '>=', $date);
+                })
+        ->orderBy('startDate')
+        ->get();
 
-        // 変換処理（日本語形式）
         $allDayEvents = EventTime::convertDateToJapaneseFormat($allDayEvents);
 
-        // 時間指定イベントの取得
-        $timedEvents = Event::select('title',
-                                     DB::raw("strftime('%H:%M:%S', startTime) AS startTime"),
-                                     DB::raw("strftime('%H:%M:%S', endTime) AS endTime"),
-                                     'id')
-            ->where('isAllDay', false)  // isAllDay = 0 の条件
-            ->where(function($query) use ($date) {
-                $query->whereDate('startDate', '<=', $date)
-                      ->whereDate('endDate', '>=', $date);
-            })
-            ->orderBy(DB::raw("strftime('%H:%M', startTime)"))
-            ->get();
+        $timedEvents = Event::select('title',DB::raw("DATE_FORMAT(startTime, '%I:%i %p') AS startTime"),DB::raw("DATE_FORMAT(endTime, '%I:%i %p') AS endTime"),'id')
+        ->where('isAllDay', false)  // isAllDay = 0 の条件
+        ->where(function($query) use ($date) {
+            $query->whereDate('startDate', '<=', $date)
+                  ->whereDate('endDate', '>=', $date);
+                })
+        ->orderByRaw("DATE_FORMAT(startTime, '%H:%i')")
+        ->get();
 
-        // 変換処理（時間の形式を変更）
-        $timedEvents = EventTime::convertTimePeriod($timedEvents);
+        $timedEvents = EventTime::convertTimePeriod($timedEvents);//時間を○○：○○の表記から午前〇時の表記に変更する
 
-        // フル日付の取得（表示用）
-        $fullDate = EventTime::getFullDate($date);
+        $fullDate = EventTime::getFullDate($date);//スケジュールページに表示する〇月〇日（曜日）の形式になっている日付を取得
+
 
         // ビューにデータを渡す
-        return view('works.events.schedule', [
-            'allDayEvents' => $allDayEvents,
-            'timedEvents' => $timedEvents,
-            'fullDate' => $fullDate,
-            'date' => $date
-        ]);
+        return view('works.events.schedule', ['allDayEvents' => $allDayEvents,'timedEvents' => $timedEvents, 'fullDate' => $fullDate, 'date' => $date]);
     }
+
 
 
     public function show(Event $event)
