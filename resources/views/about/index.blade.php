@@ -110,7 +110,7 @@
                 <div class = "flex justify-between p-10 cursor-pointer" id="accordion-header">
                     <dt class = "flex justify-between w-[30%]">
                         <div>MySQL</div>
-                        <div>★★☆☆☆</div>
+                        <div>★★★☆☆</div>
                     </dt>
                     <span class = "duration-500 text-xl">+</span>
                 </div>
@@ -134,12 +134,12 @@
                 <div class = "flex justify-between p-10 cursor-pointer" id="accordion-header">
                     <dt class = "flex justify-between w-[30%]">
                         <div>Git</div>
-                        <div>★★☆☆☆</div>
+                        <div>★★★☆☆</div>
                     </dt>
                     <span class = "duration-500 text-xl">+</span>
                 </div>
                 <dd class = "hidden p-10"  id="accordion-content">
-                    基本的な操作は一通りできます。
+                    コミットやブランチの切り替え、リポジトリの操作など基本的な操作は一通りできます。
                 </dd>
             </div>
             <div class = "border-b border-black">

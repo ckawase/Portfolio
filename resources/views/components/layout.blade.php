@@ -14,7 +14,7 @@
 <body class="flex flex-col min-h-screen">
     {{-- 共通ヘッダー --}}
     <header>
-        <div class="container mt-16 mx-auto flex items-center justify-between py-4">
+        <div class="container mt-16 mx-auto flex items-center justify-between p-6">
             <h1 class="text-3xl font-semibold leading-none">Chihiro Kawase</h1>
             <button id="menu-toggle" class="lg:hidden px-4 py-2 text-blueGray-400 hover:opacity-60">
                 <!-- メニューアイコン (ハンバーガーアイコン) -->

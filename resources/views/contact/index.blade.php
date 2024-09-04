@@ -7,35 +7,35 @@
         @csrf
         <div class = "flex flex-col">
             <label>お名前(漢字)</label>
-            <input type="text"  class="w-[60%] mt-2 p-3 text-xs leading-none bg-blueGray-50 rounded outline-none border border-gray-800" name = "name" value = "{{old('name')}}">
+            <input type="text"  class="w-full lg:w-[60%] mt-2 p-3 text-xs leading-none bg-blueGray-50 rounded outline-none border border-gray-800" name = "name" value = "{{old('name')}}">
            @error('name')
            <p class = "text-red-400">{{$message}}</p>
            @enderror
         </div>
         <div class = "mt-4 flex flex-col">
             <label>フリガナ</label>
-            <input type="text"  class="w-[60%] mt-2 p-3 text-xs leading-none bg-blueGray-50 rounded outline-none border border-gray-800" name = "kana" value = "{{old('kana')}}">
+            <input type="text"  class="w-full lg:w-[60%] mt-2 p-3 text-xs leading-none bg-blueGray-50 rounded outline-none border border-gray-800" name = "kana" value = "{{old('kana')}}">
            @error('kana')
            <p class = "text-red-400">{{$message}}</p>
            @enderror
         </div>
         <div class = "mt-4 flex flex-col">
             <label>EMAIL</label>
-            <input type="email"  class="w-[60%] mt-2 p-3 text-xs leading-none bg-blueGray-50 rounded outline-none border border-gray-800" name = "email" value = "{{old('email')}}">
+            <input type="email"  class="w-full lg:w-[60%] mt-2 p-3 text-xs leading-none bg-blueGray-50 rounded outline-none border border-gray-800" name = "email" value = "{{old('email')}}">
             @error('email')
             <p class = "text-red-400">{{$message}}</p>
             @enderror
         </div>
         <div class = "mt-4 flex flex-col">
             <label>電話番号</label>
-            <input type="text"  class="w-[60%] mt-2 p-3 text-xs leading-none bg-blueGray-50 rounded outline-none border border-gray-800" name = "phone" value = "{{old('phone')}}">
+            <input type="text"  class="w-full lg:w-[60%] mt-2 p-3 text-xs leading-none bg-blueGray-50 rounded outline-none border border-gray-800" name = "phone" value = "{{old('phone')}}">
             @error('phone')
             <p class = "text-red-400">{{$message}}</p>
             @enderror
         </div>
         <div class = "mt-4 flex flex-col">
             <label>お問い合わせ内容</label>
-            <textarea class="w-[60%] h-24 mt-2 p-4 text-xs leading-none resize-none rounded bg-blueGray-50 border border-gray-800" name = "body">{{old('body')}}</textarea>
+            <textarea class="w-full lg:w-[60%] h-24 mt-2 p-4 text-xs leading-none resize-none rounded bg-blueGray-50 border border-gray-800" name = "body">{{old('body')}}</textarea>
             @error('body')
             <p class = "text-red-400">{{$message}}</p>
             @enderror

@@ -2,10 +2,10 @@
     <x-slot:title>Works | Chihiro Kawase</x-slot>
     <x-slot:pageTitle>Works</x-slot>
 
-    <div class = "mt-16 flex">
+    <div class = "mt-16 flex flex-col lg:flex-row">
         <img src = "{{asset('images/works/calender.png')}}" class = "w-80 h-80">
-        <div class = "flex flex-col items-center ">
-            <div class = "mx-16">
+        <div class = "flex flex-col items-center mt-6">
+            <div class = "mx-auto px-2">
                 <h2 class = "text-2xl font-semibold">カレンダーアプリ</h2>
                 <p class = "mt-2 text-xl">カレンダーアプリを自作しました！</p>
                 <p class = "mt-2 text-xl">Laravelの機能を駆使し、シンプルで使いやすいCRUD機能を実装しています。直感的な操作性を重視し、誰でも簡単に使えるアプリケーションを目指しました。</p>
@@ -15,5 +15,4 @@
             </button>
         </div>
     </div>
-
 </x-layout>

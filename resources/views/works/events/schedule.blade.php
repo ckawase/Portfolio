@@ -13,8 +13,8 @@
                 @foreach ($allDayEvents as $event)
                     <tr>
                         <th class="w-[30%] border-r-4 border-r-gray-400 text-center">
-                            <div>{{$event->startDate}}</div>
-                            <div>{{$event->endDate}}</div>
+                            <div class = "text-sm">{{$event->startDate}}</div>
+                            <div class = "text-sm">{{$event->endDate}}</div>
                         </th>
                         <td class = "text-2xl p-2 text-center">{{$event->title}}</td>
                         <td  class = "bg-gray-400 rounded text-white cursor-pointer w-[3%]  p-1 text-center text-2xl opacity-100 hover:opacity-30" id = "timedArrows" data-id = "{{$event->id}}">

@@ -20,13 +20,13 @@
         </div>
         @if ($event->isAllDay)
         <h2 class = "text-center text-2xl font-black mt-8 text-gray-500">{{$event->title}}</h2>
-        <div class = "flex justify-between items-center w-[480px] mx-auto mt-12">
+        <div class = "flex justify-between items-center lg:w-[480px] mx-auto mt-12">
             <span>
-              <div class = "text-2xl font-bold">{{$startDate}}</div>
+              <div class = "text-l lg:text-2xl font-bold">{{$startDate}}</div>
             </span>
             <span class = "flex items-center font-bold text-gray-400 text-4xl">></span>
             <span>
-              <div class = "text-2xl font-bold">{{$endDate}}</div>
+              <div class = "text-l lg:text-2xl font-bold">{{$endDate}}</div>
             </span>
           </div>
           <fieldset class = "my-20 h-[320px] border-2 border-gray-900 border-dashed p-4">
@@ -36,14 +36,14 @@
         @else
         <div>
             <h2 class = "text-center text-2xl font-black mt-8 text-{{$event->color}}-400">{{$event->title}}</h2>
-            <div class = "flex justify-between w-[480px] mx-auto mt-12">
+            <div class = "flex justify-between lg:w-[480px] mx-auto mt-12">
                 <span>
-                  <div class = "text-xl">{{$startDate}}</div>
+                  <div class = "text-l lg:text-xl">{{$startDate}}</div>
                   <div class = "text-2xl font-bold">{{$event->startTime}}</div>
                 </span>
                 <span class = "flex items-center font-bold text-gray-400 text-4xl">></span>
                 <span>
-                  <div class = "text-xl">{{$endDate}}</div>
+                  <div class = "text-l lg:text-xl">{{$endDate}}</div>
                   <div class = "text-2xl font-bold">{{$event->endTime}}</div>
                 </span>
               </div>
